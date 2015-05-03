@@ -36,7 +36,6 @@ function! unite#sources#bookmark_file#load(file) abort
   if filereadable(file)
     return s:_.chain(readfile(file))
         \.filter('isdirectory(v:val)')
-        \.map(function('unite#sources#bookmark_file#add_title'))
         \.value()
   endif
   return []
@@ -46,7 +45,7 @@ function! s:unite_sources.gather_candidates(args, context) abort
   let dirs = unite#sources#bookmark_file#load(
       \ expand(g:unite_bookmark_file))
   return map(dirs, '{
-      \ "word": v:val,
+      \ "word": unite#sources#bookmark_file#add_title(v:val),
       \ "action__directory": fnamemodify(v:val, ":p:h"),
       \ "action__path": v:val
       \ }')

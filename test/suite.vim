@@ -13,5 +13,5 @@ endfunction
 function! s:suite.bookmark_file_load_test() abort
   let file = s:Filepath.join(getcwd(), 'test', 'files', 'bookmark.txt')
   let ret  = unite#sources#bookmark_file#load(file)
-  call s:assert.equals(ret, ['[autoload] ./autoload'])
+  call s:assert.equals(ret, ['./autoload'])
 endfunction
