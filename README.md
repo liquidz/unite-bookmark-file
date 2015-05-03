@@ -1,4 +1,4 @@
-# unite-bookmark-file
+# unite-bookmark-file [![Circle CI](https://circleci.com/gh/liquidz/unite-bookmark-file.svg?style=svg)](https://circleci.com/gh/liquidz/unite-bookmark-file)
 
 Unite candidates from a bookmark file.
 
